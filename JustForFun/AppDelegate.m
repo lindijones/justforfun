@@ -7,8 +7,13 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
+#import "JFFTableViewController.h"
+#import "JFFScrollViewController.h"
+#import "JFFRootViewController.h"
 
 @interface AppDelegate ()
+@property (nonatomic, strong) UINavigationController *navController;
 
 @end
 
@@ -17,7 +22,27 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    // show one of the different VCs
+    //UIViewController *vc = [[ViewController alloc] init];
+    
+    //JFFTableViewController *tableVC = [[JFFTableViewController alloc] init];
+    
+    //JFFScrollViewController *scrollVC = [[JFFScrollViewController alloc] init];
+    
+    JFFRootViewController *rootVC = [[JFFRootViewController alloc] init];
+    
+    self.navController = [[UINavigationController alloc] initWithRootViewController:rootVC];
+    // set the bar translucence to NO
+    self.navController.navigationBar.translucent = YES; // reset the frames for the child VC ;-) => Content is not under the nav bar
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Override point for customization after application launch.
+    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = self.navController;
+    [self.window makeKeyAndVisible];
     return YES;
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

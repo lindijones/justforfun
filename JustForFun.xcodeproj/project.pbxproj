@@ -7,14 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC0AB7121C1EA04000398867 /* NormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0AB7111C1EA04000398867 /* NormalTableViewCell.m */; };
 		EC8330B71C08204A00A2BA37 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8330B61C08204900A2BA37 /* main.m */; };
 		EC8330BA1C08204A00A2BA37 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8330B91C08204A00A2BA37 /* AppDelegate.m */; };
 		EC8330BD1C08204A00A2BA37 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8330BC1C08204A00A2BA37 /* ViewController.m */; };
-		EC8330C01C08204A00A2BA37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC8330BE1C08204A00A2BA37 /* Main.storyboard */; };
 		EC8330C21C08204A00A2BA37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC8330C11C08204A00A2BA37 /* Assets.xcassets */; };
-		EC8330C51C08204A00A2BA37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC8330C31C08204A00A2BA37 /* LaunchScreen.storyboard */; };
 		EC8330D01C08204A00A2BA37 /* JustForFunTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8330CF1C08204A00A2BA37 /* JustForFunTests.m */; };
 		EC8330DB1C08204A00A2BA37 /* JustForFunUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8330DA1C08204A00A2BA37 /* JustForFunUITests.m */; };
+		EC8330F01C0826CD00A2BA37 /* PureLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8330EC1C08263400A2BA37 /* PureLayout.framework */; };
+		EC8330F11C0826CD00A2BA37 /* PureLayout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC8330EC1C08263400A2BA37 /* PureLayout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EC8330F51C0A22FF00A2BA37 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8330F41C0A22FF00A2BA37 /* SecondViewController.m */; };
+		EC8330F91C0A273C00A2BA37 /* JFFTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8330F81C0A273C00A2BA37 /* JFFTableViewController.m */; };
+		EC8330FC1C0B9B1B00A2BA37 /* JFFScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8330FB1C0B9B1B00A2BA37 /* JFFScrollViewController.m */; };
+		EC8330FF1C0BA38600A2BA37 /* JFFRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8330FE1C0BA38600A2BA37 /* JFFRootViewController.m */; };
+		ECC2DBE41C14FA4400DEAF8E /* JFFCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC2DBE31C14FA4400DEAF8E /* JFFCustomCell.m */; };
+		ECC2DBE91C1500F300DEAF8E /* beach.png in Resources */ = {isa = PBXBuildFile; fileRef = ECC2DBE61C1500F300DEAF8E /* beach.png */; };
+		ECC2DBEA1C1500F300DEAF8E /* san_francisco.png in Resources */ = {isa = PBXBuildFile; fileRef = ECC2DBE71C1500F300DEAF8E /* san_francisco.png */; };
+		ECC2DBEB1C1500F300DEAF8E /* alps.png in Resources */ = {isa = PBXBuildFile; fileRef = ECC2DBE81C1500F300DEAF8E /* alps.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,16 +43,30 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		EC8330F21C0826CD00A2BA37 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EC8330F11C0826CD00A2BA37 /* PureLayout.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		EC0AB7101C1EA04000398867 /* NormalTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalTableViewCell.h; sourceTree = "<group>"; };
+		EC0AB7111C1EA04000398867 /* NormalTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalTableViewCell.m; sourceTree = "<group>"; };
 		EC8330B21C08204900A2BA37 /* JustForFun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustForFun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC8330B61C08204900A2BA37 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EC8330B81C08204A00A2BA37 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EC8330B91C08204A00A2BA37 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		EC8330BB1C08204A00A2BA37 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		EC8330BC1C08204A00A2BA37 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		EC8330BF1C08204A00A2BA37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EC8330C11C08204A00A2BA37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		EC8330C41C08204A00A2BA37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC8330C61C08204A00A2BA37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC8330CB1C08204A00A2BA37 /* JustForFunTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JustForFunTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC8330CF1C08204A00A2BA37 /* JustForFunTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JustForFunTests.m; sourceTree = "<group>"; };
@@ -51,6 +74,21 @@
 		EC8330D61C08204A00A2BA37 /* JustForFunUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JustForFunUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC8330DA1C08204A00A2BA37 /* JustForFunUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JustForFunUITests.m; sourceTree = "<group>"; };
 		EC8330DC1C08204A00A2BA37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC8330EC1C08263400A2BA37 /* PureLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PureLayout.framework; path = Carthage/Build/iOS/PureLayout.framework; sourceTree = "<group>"; };
+		EC8330EE1C08266600A2BA37 /* PureLayout.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = PureLayout.framework.dSYM; path = Carthage/Build/iOS/PureLayout.framework.dSYM; sourceTree = "<group>"; };
+		EC8330F31C0A22FF00A2BA37 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		EC8330F41C0A22FF00A2BA37 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		EC8330F71C0A273C00A2BA37 /* JFFTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFFTableViewController.h; sourceTree = "<group>"; };
+		EC8330F81C0A273C00A2BA37 /* JFFTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFFTableViewController.m; sourceTree = "<group>"; };
+		EC8330FA1C0B9B1B00A2BA37 /* JFFScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFFScrollViewController.h; sourceTree = "<group>"; };
+		EC8330FB1C0B9B1B00A2BA37 /* JFFScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFFScrollViewController.m; sourceTree = "<group>"; };
+		EC8330FD1C0BA38600A2BA37 /* JFFRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFFRootViewController.h; sourceTree = "<group>"; };
+		EC8330FE1C0BA38600A2BA37 /* JFFRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFFRootViewController.m; sourceTree = "<group>"; };
+		ECC2DBE21C14FA4400DEAF8E /* JFFCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFFCustomCell.h; sourceTree = "<group>"; };
+		ECC2DBE31C14FA4400DEAF8E /* JFFCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFFCustomCell.m; sourceTree = "<group>"; };
+		ECC2DBE61C1500F300DEAF8E /* beach.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beach.png; sourceTree = "<group>"; };
+		ECC2DBE71C1500F300DEAF8E /* san_francisco.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = san_francisco.png; sourceTree = "<group>"; };
+		ECC2DBE81C1500F300DEAF8E /* alps.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alps.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC8330F01C0826CD00A2BA37 /* PureLayout.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +120,8 @@
 		EC8330A91C08204900A2BA37 = {
 			isa = PBXGroup;
 			children = (
+				EC8330EE1C08266600A2BA37 /* PureLayout.framework.dSYM */,
+				EC8330EC1C08263400A2BA37 /* PureLayout.framework */,
 				EC8330B41C08204900A2BA37 /* JustForFun */,
 				EC8330CE1C08204A00A2BA37 /* JustForFunTests */,
 				EC8330D91C08204A00A2BA37 /* JustForFunUITests */,
@@ -101,13 +142,19 @@
 		EC8330B41C08204900A2BA37 /* JustForFun */ = {
 			isa = PBXGroup;
 			children = (
+				ECC2DBE51C15008F00DEAF8E /* images */,
 				EC8330B81C08204A00A2BA37 /* AppDelegate.h */,
 				EC8330B91C08204A00A2BA37 /* AppDelegate.m */,
 				EC8330BB1C08204A00A2BA37 /* ViewController.h */,
 				EC8330BC1C08204A00A2BA37 /* ViewController.m */,
-				EC8330BE1C08204A00A2BA37 /* Main.storyboard */,
+				EC8330F31C0A22FF00A2BA37 /* SecondViewController.h */,
+				EC8330F41C0A22FF00A2BA37 /* SecondViewController.m */,
+				ECC2DBE11C14FA2400DEAF8E /* TableView */,
+				EC8330FA1C0B9B1B00A2BA37 /* JFFScrollViewController.h */,
+				EC8330FB1C0B9B1B00A2BA37 /* JFFScrollViewController.m */,
+				EC8330FD1C0BA38600A2BA37 /* JFFRootViewController.h */,
+				EC8330FE1C0BA38600A2BA37 /* JFFRootViewController.m */,
 				EC8330C11C08204A00A2BA37 /* Assets.xcassets */,
-				EC8330C31C08204A00A2BA37 /* LaunchScreen.storyboard */,
 				EC8330C61C08204A00A2BA37 /* Info.plist */,
 				EC8330B51C08204900A2BA37 /* Supporting Files */,
 			);
@@ -140,6 +187,29 @@
 			path = JustForFunUITests;
 			sourceTree = "<group>";
 		};
+		ECC2DBE11C14FA2400DEAF8E /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				EC8330F71C0A273C00A2BA37 /* JFFTableViewController.h */,
+				EC8330F81C0A273C00A2BA37 /* JFFTableViewController.m */,
+				ECC2DBE21C14FA4400DEAF8E /* JFFCustomCell.h */,
+				ECC2DBE31C14FA4400DEAF8E /* JFFCustomCell.m */,
+				EC0AB7101C1EA04000398867 /* NormalTableViewCell.h */,
+				EC0AB7111C1EA04000398867 /* NormalTableViewCell.m */,
+			);
+			name = TableView;
+			sourceTree = "<group>";
+		};
+		ECC2DBE51C15008F00DEAF8E /* images */ = {
+			isa = PBXGroup;
+			children = (
+				ECC2DBE61C1500F300DEAF8E /* beach.png */,
+				ECC2DBE71C1500F300DEAF8E /* san_francisco.png */,
+				ECC2DBE81C1500F300DEAF8E /* alps.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -150,6 +220,7 @@
 				EC8330AE1C08204900A2BA37 /* Sources */,
 				EC8330AF1C08204900A2BA37 /* Frameworks */,
 				EC8330B01C08204900A2BA37 /* Resources */,
+				EC8330F21C0826CD00A2BA37 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -207,6 +278,7 @@
 				TargetAttributes = {
 					EC8330B11C08204900A2BA37 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 2CAP244972;
 					};
 					EC8330CA1C08204A00A2BA37 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -243,9 +315,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC8330C51C08204A00A2BA37 /* LaunchScreen.storyboard in Resources */,
 				EC8330C21C08204A00A2BA37 /* Assets.xcassets in Resources */,
-				EC8330C01C08204A00A2BA37 /* Main.storyboard in Resources */,
+				ECC2DBEA1C1500F300DEAF8E /* san_francisco.png in Resources */,
+				ECC2DBE91C1500F300DEAF8E /* beach.png in Resources */,
+				ECC2DBEB1C1500F300DEAF8E /* alps.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,9 +343,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC8330F91C0A273C00A2BA37 /* JFFTableViewController.m in Sources */,
+				EC8330F51C0A22FF00A2BA37 /* SecondViewController.m in Sources */,
+				ECC2DBE41C14FA4400DEAF8E /* JFFCustomCell.m in Sources */,
 				EC8330BD1C08204A00A2BA37 /* ViewController.m in Sources */,
+				EC0AB7121C1EA04000398867 /* NormalTableViewCell.m in Sources */,
 				EC8330BA1C08204A00A2BA37 /* AppDelegate.m in Sources */,
+				EC8330FC1C0B9B1B00A2BA37 /* JFFScrollViewController.m in Sources */,
 				EC8330B71C08204A00A2BA37 /* main.m in Sources */,
+				EC8330FF1C0BA38600A2BA37 /* JFFRootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,25 +385,6 @@
 			targetProxy = EC8330D71C08204A00A2BA37 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		EC8330BE1C08204A00A2BA37 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EC8330BF1C08204A00A2BA37 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		EC8330C31C08204A00A2BA37 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EC8330C41C08204A00A2BA37 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		EC8330DD1C08204A00A2BA37 /* Debug */ = {
@@ -411,10 +471,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = JustForFun/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.daimler.JustForFun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -422,10 +489,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = JustForFun/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.daimler.JustForFun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -496,6 +570,7 @@
 				EC8330E11C08204A00A2BA37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EC8330E21C08204A00A2BA37 /* Build configuration list for PBXNativeTarget "JustForFunTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +579,7 @@
 				EC8330E41C08204A00A2BA37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EC8330E51C08204A00A2BA37 /* Build configuration list for PBXNativeTarget "JustForFunUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +588,7 @@
 				EC8330E71C08204A00A2BA37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,6 +7,8 @@
 //
 
 #import "JFFTableViewController.h"
+#import "JFFCustomCell.h"
+#import "NormalTableViewCell.h"
 
 @interface JFFTableViewController ()
 @property (nonatomic,strong) NSMutableArray *content;
@@ -17,9 +19,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.content = [[NSMutableArray alloc] initWithArray:@[@"One", @"Two", @"Three", @"Four", @"Five"]];
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cellID"];
+    self.content = [self createFakeContent];
+    [self.tableView registerClass:[JFFCustomCell class] forCellReuseIdentifier:@"customCell"];
+    [self.tableView registerClass:[NormalTableViewCell class] forCellReuseIdentifier:@"normalCell"];
+
     self.tableView.delegate = self;
+    
+//    self.tableView.rowHeight = UITableViewAutomaticDimension;
+//    self.tableView.estimatedRowHeight = 120;
+    
   
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -35,6 +43,11 @@
 
 #pragma mark - Table view data source
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return 160;
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 //#warning Incomplete implementation, return the number of sections
     return 1;
@@ -47,13 +60,30 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellID" forIndexPath:indexPath];
+    static NSString *cellIdentifier = @"customCell";
+    JFFCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
-    cell.backgroundColor = [UIColor greenColor];
-    cell.textLabel.text = self.content[indexPath.row];
     
+    cell.customLabel.text = self.content[indexPath.row];
+    
+    if (indexPath.row % 2 > 0) {
+        [cell.iv setImage:[UIImage imageNamed:@"beach.png"]];
+    }else if (indexPath.row % 3 > 0){
+        [cell.iv setImage:[UIImage imageNamed:@"alps.png"]];
+    }else{
+        [cell.iv setImage:[UIImage imageNamed:@"san_francisco.png"]];
+    }
+ 
     return cell;
+}
+
+-(NSMutableArray *)createFakeContent{
+    NSMutableArray *fakeContent = [[NSMutableArray alloc] init];
+    int i;
+    for (i=0; i<100; i++) {
+        [fakeContent addObject:[NSString stringWithFormat:@"%i", i]];
+    }
+    return fakeContent;
 }
 
 

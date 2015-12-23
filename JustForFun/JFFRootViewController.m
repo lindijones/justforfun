@@ -60,6 +60,11 @@
     
     
     // Do any additional setup after loading the view.
+    
+    
+    //DEBUG
+    JFFTableViewController *tableVC = [JFFTableViewController new];
+    [self.navigationController pushViewController:tableVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
