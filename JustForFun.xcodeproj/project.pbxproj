@@ -7,16 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E2FB71251C34192E006EA2A2 /* JFFMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB71241C34192E006EA2A2 /* JFFMainViewController.m */; };
+		E2FB71281C342519006EA2A2 /* camera-full.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB71271C342519006EA2A2 /* camera-full.png */; };
+		E2FB712A1C34251F006EA2A2 /* camera-outline.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB71291C34251F006EA2A2 /* camera-outline.png */; };
+		E2FB712E1C3426D5006EA2A2 /* UIImage+ScaleExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB712D1C3426D5006EA2A2 /* UIImage+ScaleExtras.m */; };
 		EC0AB7121C1EA04000398867 /* NormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0AB7111C1EA04000398867 /* NormalTableViewCell.m */; };
 		EC8330B71C08204A00A2BA37 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8330B61C08204900A2BA37 /* main.m */; };
 		EC8330BA1C08204A00A2BA37 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8330B91C08204A00A2BA37 /* AppDelegate.m */; };
-		EC8330BD1C08204A00A2BA37 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8330BC1C08204A00A2BA37 /* ViewController.m */; };
 		EC8330C21C08204A00A2BA37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC8330C11C08204A00A2BA37 /* Assets.xcassets */; };
 		EC8330D01C08204A00A2BA37 /* JustForFunTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8330CF1C08204A00A2BA37 /* JustForFunTests.m */; };
 		EC8330DB1C08204A00A2BA37 /* JustForFunUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8330DA1C08204A00A2BA37 /* JustForFunUITests.m */; };
 		EC8330F01C0826CD00A2BA37 /* PureLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8330EC1C08263400A2BA37 /* PureLayout.framework */; };
 		EC8330F11C0826CD00A2BA37 /* PureLayout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC8330EC1C08263400A2BA37 /* PureLayout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		EC8330F51C0A22FF00A2BA37 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8330F41C0A22FF00A2BA37 /* SecondViewController.m */; };
 		EC8330F91C0A273C00A2BA37 /* JFFTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8330F81C0A273C00A2BA37 /* JFFTableViewController.m */; };
 		EC8330FC1C0B9B1B00A2BA37 /* JFFScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8330FB1C0B9B1B00A2BA37 /* JFFScrollViewController.m */; };
 		EC8330FF1C0BA38600A2BA37 /* JFFRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8330FE1C0BA38600A2BA37 /* JFFRootViewController.m */; };
@@ -58,14 +60,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E2FB71231C34192E006EA2A2 /* JFFMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFFMainViewController.h; sourceTree = "<group>"; };
+		E2FB71241C34192E006EA2A2 /* JFFMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFFMainViewController.m; sourceTree = "<group>"; };
+		E2FB71271C342519006EA2A2 /* camera-full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-full.png"; sourceTree = "<group>"; };
+		E2FB71291C34251F006EA2A2 /* camera-outline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-outline.png"; sourceTree = "<group>"; };
+		E2FB712C1C3426D5006EA2A2 /* UIImage+ScaleExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ScaleExtras.h"; sourceTree = "<group>"; };
+		E2FB712D1C3426D5006EA2A2 /* UIImage+ScaleExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ScaleExtras.m"; sourceTree = "<group>"; };
 		EC0AB7101C1EA04000398867 /* NormalTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalTableViewCell.h; sourceTree = "<group>"; };
 		EC0AB7111C1EA04000398867 /* NormalTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalTableViewCell.m; sourceTree = "<group>"; };
 		EC8330B21C08204900A2BA37 /* JustForFun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustForFun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC8330B61C08204900A2BA37 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EC8330B81C08204A00A2BA37 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EC8330B91C08204A00A2BA37 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		EC8330BB1C08204A00A2BA37 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		EC8330BC1C08204A00A2BA37 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		EC8330C11C08204A00A2BA37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC8330C61C08204A00A2BA37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC8330CB1C08204A00A2BA37 /* JustForFunTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JustForFunTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,8 +82,6 @@
 		EC8330DC1C08204A00A2BA37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC8330EC1C08263400A2BA37 /* PureLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PureLayout.framework; path = Carthage/Build/iOS/PureLayout.framework; sourceTree = "<group>"; };
 		EC8330EE1C08266600A2BA37 /* PureLayout.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = PureLayout.framework.dSYM; path = Carthage/Build/iOS/PureLayout.framework.dSYM; sourceTree = "<group>"; };
-		EC8330F31C0A22FF00A2BA37 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		EC8330F41C0A22FF00A2BA37 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		EC8330F71C0A273C00A2BA37 /* JFFTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFFTableViewController.h; sourceTree = "<group>"; };
 		EC8330F81C0A273C00A2BA37 /* JFFTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFFTableViewController.m; sourceTree = "<group>"; };
 		EC8330FA1C0B9B1B00A2BA37 /* JFFScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFFScrollViewController.h; sourceTree = "<group>"; };
@@ -117,11 +121,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EC8330A91C08204900A2BA37 = {
+		E2FB71261C342506006EA2A2 /* camera icons */ = {
+			isa = PBXGroup;
+			children = (
+				E2FB71291C34251F006EA2A2 /* camera-outline.png */,
+				E2FB71271C342519006EA2A2 /* camera-full.png */,
+			);
+			name = "camera icons";
+			sourceTree = "<group>";
+		};
+		E2FB712B1C34269F006EA2A2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E2FB712C1C3426D5006EA2A2 /* UIImage+ScaleExtras.h */,
+				E2FB712D1C3426D5006EA2A2 /* UIImage+ScaleExtras.m */,
+			);
+			name = Extensions;
+			path = JustForFun;
+			sourceTree = "<group>";
+		};
+		E2FB712F1C34298E006EA2A2 /* Frameworks extern */ = {
 			isa = PBXGroup;
 			children = (
 				EC8330EE1C08266600A2BA37 /* PureLayout.framework.dSYM */,
 				EC8330EC1C08263400A2BA37 /* PureLayout.framework */,
+			);
+			name = "Frameworks extern";
+			sourceTree = "<group>";
+		};
+		E2FB71301C3429AB006EA2A2 /* tableview sample images */ = {
+			isa = PBXGroup;
+			children = (
+				ECC2DBE61C1500F300DEAF8E /* beach.png */,
+				ECC2DBE71C1500F300DEAF8E /* san_francisco.png */,
+				ECC2DBE81C1500F300DEAF8E /* alps.png */,
+			);
+			name = "tableview sample images";
+			sourceTree = "<group>";
+		};
+		EC8330A91C08204900A2BA37 = {
+			isa = PBXGroup;
+			children = (
+				E2FB712B1C34269F006EA2A2 /* Extensions */,
+				E2FB712F1C34298E006EA2A2 /* Frameworks extern */,
 				EC8330B41C08204900A2BA37 /* JustForFun */,
 				EC8330CE1C08204A00A2BA37 /* JustForFunTests */,
 				EC8330D91C08204A00A2BA37 /* JustForFunUITests */,
@@ -145,15 +187,13 @@
 				ECC2DBE51C15008F00DEAF8E /* images */,
 				EC8330B81C08204A00A2BA37 /* AppDelegate.h */,
 				EC8330B91C08204A00A2BA37 /* AppDelegate.m */,
-				EC8330BB1C08204A00A2BA37 /* ViewController.h */,
-				EC8330BC1C08204A00A2BA37 /* ViewController.m */,
-				EC8330F31C0A22FF00A2BA37 /* SecondViewController.h */,
-				EC8330F41C0A22FF00A2BA37 /* SecondViewController.m */,
-				ECC2DBE11C14FA2400DEAF8E /* TableView */,
-				EC8330FA1C0B9B1B00A2BA37 /* JFFScrollViewController.h */,
-				EC8330FB1C0B9B1B00A2BA37 /* JFFScrollViewController.m */,
 				EC8330FD1C0BA38600A2BA37 /* JFFRootViewController.h */,
 				EC8330FE1C0BA38600A2BA37 /* JFFRootViewController.m */,
+				EC8330FA1C0B9B1B00A2BA37 /* JFFScrollViewController.h */,
+				EC8330FB1C0B9B1B00A2BA37 /* JFFScrollViewController.m */,
+				ECC2DBE11C14FA2400DEAF8E /* TableView */,
+				E2FB71231C34192E006EA2A2 /* JFFMainViewController.h */,
+				E2FB71241C34192E006EA2A2 /* JFFMainViewController.m */,
 				EC8330C11C08204A00A2BA37 /* Assets.xcassets */,
 				EC8330C61C08204A00A2BA37 /* Info.plist */,
 				EC8330B51C08204900A2BA37 /* Supporting Files */,
@@ -203,9 +243,8 @@
 		ECC2DBE51C15008F00DEAF8E /* images */ = {
 			isa = PBXGroup;
 			children = (
-				ECC2DBE61C1500F300DEAF8E /* beach.png */,
-				ECC2DBE71C1500F300DEAF8E /* san_francisco.png */,
-				ECC2DBE81C1500F300DEAF8E /* alps.png */,
+				E2FB71261C342506006EA2A2 /* camera icons */,
+				E2FB71301C3429AB006EA2A2 /* tableview sample images */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -319,6 +358,8 @@
 				ECC2DBEA1C1500F300DEAF8E /* san_francisco.png in Resources */,
 				ECC2DBE91C1500F300DEAF8E /* beach.png in Resources */,
 				ECC2DBEB1C1500F300DEAF8E /* alps.png in Resources */,
+				E2FB71281C342519006EA2A2 /* camera-full.png in Resources */,
+				E2FB712A1C34251F006EA2A2 /* camera-outline.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,12 +385,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC8330F91C0A273C00A2BA37 /* JFFTableViewController.m in Sources */,
-				EC8330F51C0A22FF00A2BA37 /* SecondViewController.m in Sources */,
+				E2FB712E1C3426D5006EA2A2 /* UIImage+ScaleExtras.m in Sources */,
 				ECC2DBE41C14FA4400DEAF8E /* JFFCustomCell.m in Sources */,
-				EC8330BD1C08204A00A2BA37 /* ViewController.m in Sources */,
 				EC0AB7121C1EA04000398867 /* NormalTableViewCell.m in Sources */,
 				EC8330BA1C08204A00A2BA37 /* AppDelegate.m in Sources */,
 				EC8330FC1C0B9B1B00A2BA37 /* JFFScrollViewController.m in Sources */,
+				E2FB71251C34192E006EA2A2 /* JFFMainViewController.m in Sources */,
 				EC8330B71C08204A00A2BA37 /* main.m in Sources */,
 				EC8330FF1C0BA38600A2BA37 /* JFFRootViewController.m in Sources */,
 			);

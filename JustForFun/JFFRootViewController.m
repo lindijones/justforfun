@@ -11,6 +11,7 @@
 @interface JFFRootViewController ()
 @property (nonatomic,strong) UIButton *scrollViewButton;
 @property (nonatomic,strong) UIButton *tableViewButton;
+@property (nonatomic,strong) UIButton *mainViewButton;
 @end
 
 @implementation JFFRootViewController
@@ -26,6 +27,20 @@
     [self.view setUserInteractionEnabled:YES];
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
+    [self configureButtons];
+    
+    // Do any additional setup after loading the view.
+    
+    
+#ifdef DEBUG
+//    JFFTableViewController *tableVC = [JFFTableViewController new];
+//    [self.navigationController pushViewController:tableVC animated:YES];
+    JFFMainViewController *mainVC = [JFFMainViewController new];
+    [self.navigationController pushViewController:mainVC animated:YES];
+#endif
+}
+
+-(void)configureButtons{
     // create the buttons
     
     //scrollVC button
@@ -46,25 +61,28 @@
     self.tableViewButton.backgroundColor = [UIColor redColor];
     [self.tableViewButton addTarget:self action:@selector(showTableVC:) forControlEvents:UIControlEventTouchUpInside];
     
+    // mainVC button
+    self.mainViewButton = [[UIButton alloc] initWithFrame:CGRectMake(20, 200, 100, 30)];
+    [self.mainViewButton setTitle:@"MainVC" forState:UIControlStateNormal];
+    [self.mainViewButton setTitleColor:[UIColor colorWithRed:36/255.0 green:71/255.0 blue:113/255.0 alpha:1.0] forState:UIControlStateNormal];
+    self.mainViewButton.backgroundColor = [UIColor blueColor];
+    [self.mainViewButton addTarget:self action:@selector(showMainVC:) forControlEvents:UIControlEventTouchUpInside];
+    
     // add the buttons to the VC
     [self.view addSubview:self.scrollViewButton];
     [self.view addSubview:self.tableViewButton];
+    [self.view addSubview:self.mainViewButton];
     
     // after adding the buttons as subviews do some layout
     [self.scrollViewButton autoAlignAxis:ALAxisVertical toSameAxisOfView:self.view];
     [self.scrollViewButton autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:self.view withOffset:40];
     
     [self.tableViewButton autoAlignAxis:ALAxisVertical toSameAxisOfView:self.view];
-    [self.tableViewButton autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:self.view withOffset:100];
+    [self.tableViewButton autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.scrollViewButton withOffset:30];
     
-    
-    
-    // Do any additional setup after loading the view.
-    
-    
-    //DEBUG
-    JFFTableViewController *tableVC = [JFFTableViewController new];
-    [self.navigationController pushViewController:tableVC animated:YES];
+    [self.mainViewButton autoAlignAxis:ALAxisVertical toSameAxisOfView:self.view];
+    [self.mainViewButton autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.tableViewButton withOffset:30];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -85,6 +103,13 @@
     NSLog(@"%s", __PRETTY_FUNCTION__);
     JFFTableViewController *tableVC = [JFFTableViewController new];
     [self.navigationController pushViewController:tableVC animated:YES];
+}
+
+-(void)showMainVC:(id)sender
+{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    JFFMainViewController *mainVC = [JFFMainViewController new];
+    [self.navigationController pushViewController:mainVC animated:YES];
 }
 
 /*

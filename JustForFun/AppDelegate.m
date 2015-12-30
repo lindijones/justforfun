@@ -7,9 +7,9 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
-#import "JFFTableViewController.h"
-#import "JFFScrollViewController.h"
+//#import "ViewController.h"
+//#import "JFFTableViewController.h"
+//#import "JFFScrollViewController.h"
 #import "JFFRootViewController.h"
 
 @interface AppDelegate ()

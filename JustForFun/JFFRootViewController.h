@@ -11,6 +11,7 @@
 
 #import "JFFScrollViewController.h"
 #import "JFFTableViewController.h"
+#import "JFFMainViewController.h"
 
 @interface JFFRootViewController : UIViewController
 
