@@ -80,8 +80,8 @@
     
     // constraints
     // size
-    [self.mapView autoMatchDimension:ALDimensionWidth toDimension:ALDimensionWidth ofView:self.view withMultiplier:0.3];
-    [self.mapView autoMatchDimension:ALDimensionHeight toDimension:ALDimensionWidth ofView:self.mapView];
+    [self.mapView autoMatchDimension:ALDimensionWidth toDimension:ALDimensionWidth ofView:self.view withMultiplier:0.7];
+    [self.mapView autoMatchDimension:ALDimensionHeight toDimension:ALDimensionWidth ofView:self.mapView withMultiplier:0.4];
     // after adding the buttons as subviews do some layout
     [self.mapView autoAlignAxis:ALAxisVertical toSameAxisOfView:self.view];
     [self.mapView autoPinToTopLayoutGuideOfViewController:self withInset:10];
