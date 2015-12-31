@@ -11,6 +11,7 @@
 @interface JFFMainViewController ()
 @property (nonatomic,strong) UIButton *captureMoment;
 @property (nonatomic,strong) MKMapView *mapView;
+@property (nonatomic,strong) CLLocationManager *locationManager;
 @end
 
 @implementation JFFMainViewController
@@ -22,11 +23,48 @@
     // set the color to prevent the push animation bug :-S
     self.view.backgroundColor = [UIColor whiteColor];
     
+    [self configureLocationManager];
     [self configureCaptureButton];
     [self configureMapView];
     
-   
- 
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appWillResignActive:) name:UIApplicationWillResignActiveNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appDidEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
+
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appDidBecomeActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appWillEnterForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
+}
+
+- (void)appWillResignActive:(NSNotification *)notification {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+
+- (void)appDidEnterBackground:(NSNotification *)notification {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+
+
+- (void)appDidBecomeActive:(NSNotification *)notification {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    [self.locationManager requestLocation];
+
+}
+
+- (void)appWillEnterForeground:(NSNotification *)notification {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    // after the map view is configured get the locaion one time
+    [self.locationManager requestLocation];
+}
+
+-(void)configureLocationManager{
+    self.locationManager = [CLLocationManager new];
+    [self.locationManager requestWhenInUseAuthorization];
+    self.locationManager.delegate = self;
+    //[self.locationManager startUpdatingLocation];
 }
 
 -(void)configureCaptureButton{
@@ -37,6 +75,8 @@
     [self.captureMoment setTitleColor:[UIColor colorWithRed:36/255.0 green:71/255.0 blue:113/255.0 alpha:1.0] forState:UIControlStateNormal];
     //self.captureMoment.backgroundColor = [UIColor blueColor];
     [self.captureMoment addTarget:self action:@selector(captureMoment:) forControlEvents:UIControlEventTouchUpInside];
+    [self.captureMoment addTarget:self action:@selector(holdDown:) forControlEvents:UIControlEventTouchDown];
+
     
     //[self.captureMoment setTitleColor:[UIColor greenColor] forState:UIControlStateHighlighted];
     UIImage *idleCam = [UIImage imageNamed:@"camera-outline.png"];
@@ -77,6 +117,8 @@
     // now a map view
     self.mapView = [[MKMapView alloc] initWithFrame:CGRectMake(20, 20, 100, 100)];
     [self.view addSubview:self.mapView];
+    self.mapView.showsUserLocation = YES;
+
     
     // constraints
     // size
@@ -92,26 +134,49 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)captureMoment:(id)sender{
+-(void)holdDown:(id)sender{
     NSLog(@"%s", __PRETTY_FUNCTION__);
-    
-//    CABasicAnimation *theAnimation;
-    
-//    theAnimation=[CABasicAnimation animationWithKeyPath:@"opacity"];
-//    theAnimation.duration=1.0;
-//    theAnimation.repeatCount=HUGE_VALF;
-//    theAnimation.autoreverses=YES;
-//    theAnimation.fromValue=[NSNumber numberWithFloat:1.0];
-//    theAnimation.toValue=[NSNumber numberWithFloat:0.0];
-//    [self.captureMoment.layer addAnimation:theAnimation forKey:@"animateOpacity"]; //myButton.layer instead of
-    
     CABasicAnimation *pulseAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
-    pulseAnimation.duration = .1;
+    pulseAnimation.duration = .05;
     pulseAnimation.toValue = [NSNumber numberWithFloat:1.3];
     pulseAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     pulseAnimation.autoreverses = YES;
     pulseAnimation.repeatCount = 1;
     [self.captureMoment.layer addAnimation:pulseAnimation forKey:nil];
+    
+    // second animation
+    CABasicAnimation *theAnimation;
+    theAnimation=[CABasicAnimation animationWithKeyPath:@"opacity"];
+    theAnimation.duration=.05;
+    theAnimation.repeatCount=1;
+    theAnimation.autoreverses=YES;
+    theAnimation.fromValue=[NSNumber numberWithFloat:1.0];
+    theAnimation.toValue=[NSNumber numberWithFloat:0.0];
+    [self.captureMoment.layer addAnimation:theAnimation forKey:@"animateOpacity"]; //myButton.layer instead of
+    
+}
+
+-(void)captureMoment:(id)sender{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    
+    
+
+    
+ 
+}
+
+#pragma mark - CLLocationManagerDelegate
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
+    CLLocation *lastLocation = locations.lastObject;
+    NSLog(@"Location: Long: %f Lat: %f", lastLocation.coordinate.longitude, lastLocation.coordinate.latitude);
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(lastLocation.coordinate, 500, 500);
+    MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:viewRegion];
+    [self.mapView setRegion:adjustedRegion animated:YES];
+}
+
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
+    NSLog(@"%s ==> Error: %@", __PRETTY_FUNCTION__, error);
 }
 
 /*
@@ -123,5 +188,7 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 @end

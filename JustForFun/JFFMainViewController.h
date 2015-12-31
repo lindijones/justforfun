@@ -11,6 +11,6 @@
 #import "UIImage+ScaleExtras.h"
 #import <MapKit/MapKit.h>
 
-@interface JFFMainViewController : UIViewController
+@interface JFFMainViewController : UIViewController <CLLocationManagerDelegate>
 
 @end
