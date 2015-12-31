@@ -94,6 +94,24 @@
 
 -(void)captureMoment:(id)sender{
     NSLog(@"%s", __PRETTY_FUNCTION__);
+    
+//    CABasicAnimation *theAnimation;
+    
+//    theAnimation=[CABasicAnimation animationWithKeyPath:@"opacity"];
+//    theAnimation.duration=1.0;
+//    theAnimation.repeatCount=HUGE_VALF;
+//    theAnimation.autoreverses=YES;
+//    theAnimation.fromValue=[NSNumber numberWithFloat:1.0];
+//    theAnimation.toValue=[NSNumber numberWithFloat:0.0];
+//    [self.captureMoment.layer addAnimation:theAnimation forKey:@"animateOpacity"]; //myButton.layer instead of
+    
+    CABasicAnimation *pulseAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+    pulseAnimation.duration = .1;
+    pulseAnimation.toValue = [NSNumber numberWithFloat:1.3];
+    pulseAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    pulseAnimation.autoreverses = YES;
+    pulseAnimation.repeatCount = 1;
+    [self.captureMoment.layer addAnimation:pulseAnimation forKey:nil];
 }
 
 /*
