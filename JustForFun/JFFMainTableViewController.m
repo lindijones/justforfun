@@ -1,39 +1,31 @@
 //
-//  JFFTableViewController.m
+//  JFFMainTableViewController.m
 //  JustForFun
 //
-//  Created by Linder, Thomas L. (415) on 28.11.15.
-//  Copyright © 2015 Linder, Thomas L. (415). All rights reserved.
+//  Created by Thomas Linder on 03.01.16.
+//  Copyright © 2016 Linder, Thomas L. (415). All rights reserved.
 //
 
-#import "JFFTableViewController.h"
-#import "JFFCustomCell.h"
-//#import "NormalTableViewCell.h"
+#import "JFFMainTableViewController.h"
 
-@interface JFFTableViewController ()
-@property (nonatomic,strong) NSMutableArray *content;
+@interface JFFMainTableViewController ()
+@property (nonatomic,strong) NSArray *testData;
 @end
 
-@implementation JFFTableViewController
+@implementation JFFMainTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.content = [self createFakeContent];
-    [self.tableView registerClass:[JFFCustomCell class] forCellReuseIdentifier:@"customCell"];
-    //[self.tableView registerClass:[NormalTableViewCell class] forCellReuseIdentifier:@"normalCell"];
-
-    self.tableView.delegate = self;
-    
-//    self.tableView.rowHeight = UITableViewAutomaticDimension;
-//    self.tableView.estimatedRowHeight = 120;
-    
-  
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    self.testData = @[@"One", @"Two", @"Three"];
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,47 +35,52 @@
 
 #pragma mark - Table view data source
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    return 160;
-}
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//#warning Incomplete implementation, return the number of sections
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//#warning Incomplete implementation, return the number of rows
-    return self.content.count;
+    return self.testData.count;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 80;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellIdentifier = @"customCell";
-    JFFCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    
+    // Configure the cell...
     
     
-    cell.customLabel.text = self.content[indexPath.row];
+    //self.accuracy.backgroundColor = [UIColor whiteColor];
     
-    if (indexPath.row % 2 > 0) {
-        [cell.iv setImage:[UIImage imageNamed:@"beach.png"]];
-    }else if (indexPath.row % 3 > 0){
-        [cell.iv setImage:[UIImage imageNamed:@"alps.png"]];
-    }else{
-        [cell.iv setImage:[UIImage imageNamed:@"san_francisco.png"]];
-    }
- 
+    //NSString *fontName = @"HelveticaNeue-UltraLight";
+    NSString *fontName = @"HelveticaNeue-Thin";
+    
+    NSDictionary *firstAttributes = @{NSForegroundColorAttributeName: [UIColor darkGrayColor], NSBackgroundColorAttributeName: [UIColor whiteColor], NSFontAttributeName: [UIFont fontWithName:fontName size:25.0] };
+    NSDictionary *secondAttributes = @{ NSForegroundColorAttributeName: [UIColor blackColor], NSBackgroundColorAttributeName: [UIColor whiteColor], NSFontAttributeName: [UIFont fontWithName:fontName size:40.0]  };
+    
+    
+    NSString *text = [NSString stringWithFormat:@"Accuracy:"];
+    
+    NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:text];
+    
+    NSString *detailText = [NSString stringWithFormat:@"15 m"];
+    
+    NSMutableAttributedString *attributedDetailText = [[NSMutableAttributedString alloc] initWithString:detailText];
+    
+    [attributedText addAttributes:firstAttributes range:[text rangeOfString:@"Accuracy:"]];
+    [attributedDetailText addAttributes:secondAttributes range:[detailText rangeOfString:[NSString stringWithFormat:@"15 m"]]];
+    
+    cell.textLabel.attributedText = attributedText;
+    cell.detailTextLabel.text = @"hallo";
+    
+    
+    //cell.textLabel.text = self.testData[indexPath.row];
+    
     return cell;
-}
-
--(NSMutableArray *)createFakeContent{
-    NSMutableArray *fakeContent = [[NSMutableArray alloc] init];
-    int i;
-    for (i=0; i<100; i++) {
-        [fakeContent addObject:[NSString stringWithFormat:@"%i", i]];
-    }
-    return fakeContent;
 }
 
 

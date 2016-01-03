@@ -12,6 +12,10 @@
 @property (nonatomic,strong) UIButton *scrollViewButton;
 @property (nonatomic,strong) UIButton *tableViewButton;
 @property (nonatomic,strong) UIButton *mainViewButton;
+@property (nonatomic, strong) JFFScrollViewController *scrollVC;
+@property (nonatomic, strong) JFFTableViewController *tableVC;
+
+@property (nonatomic, strong) JFFMainViewController *mainVC;
 @end
 
 @implementation JFFRootViewController
@@ -28,6 +32,8 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
     [self configureButtons];
+    [self configureViewControllers];
+    
     
     // Do any additional setup after loading the view.
     
@@ -35,8 +41,7 @@
 #ifdef DEBUG
 //    JFFTableViewController *tableVC = [JFFTableViewController new];
 //    [self.navigationController pushViewController:tableVC animated:YES];
-    JFFMainViewController *mainVC = [JFFMainViewController new];
-    [self.navigationController pushViewController:mainVC animated:YES];
+    [self.navigationController pushViewController:self.mainVC animated:YES];
 #endif
 }
 
@@ -85,6 +90,12 @@
 
 }
 
+-(void)configureViewControllers{
+    self.scrollVC = [JFFScrollViewController new];
+    self.tableVC = [JFFTableViewController new];
+    self.mainVC = [JFFMainViewController new];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -93,23 +104,23 @@
 -(void)showScrollVC:(id)sender
 {
     NSLog(@"%s", __PRETTY_FUNCTION__);
-    JFFScrollViewController *scrollVC = [JFFScrollViewController new];
+    //JFFScrollViewController *scrollVC = [JFFScrollViewController new];
     //[self presentViewController:scrollVC animated:YES completion:nil];
-    [self.navigationController pushViewController:scrollVC animated:YES];
+    [self.navigationController pushViewController:self.scrollVC animated:YES];
 }
 
 -(void)showTableVC:(id)sender
 {
     NSLog(@"%s", __PRETTY_FUNCTION__);
-    JFFTableViewController *tableVC = [JFFTableViewController new];
-    [self.navigationController pushViewController:tableVC animated:YES];
+    //JFFTableViewController *tableVC = [JFFTableViewController new];
+    [self.navigationController pushViewController:self.tableVC animated:YES];
 }
 
 -(void)showMainVC:(id)sender
 {
     NSLog(@"%s", __PRETTY_FUNCTION__);
-    JFFMainViewController *mainVC = [JFFMainViewController new];
-    [self.navigationController pushViewController:mainVC animated:YES];
+    //JFFMainViewController *mainVC = [JFFMainViewController new];
+    [self.navigationController pushViewController:self.mainVC animated:YES];
 }
 
 /*

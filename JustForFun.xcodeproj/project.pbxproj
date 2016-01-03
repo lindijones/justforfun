@@ -11,6 +11,8 @@
 		E2FB71281C342519006EA2A2 /* camera-full.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB71271C342519006EA2A2 /* camera-full.png */; };
 		E2FB712A1C34251F006EA2A2 /* camera-outline.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB71291C34251F006EA2A2 /* camera-outline.png */; };
 		E2FB712E1C3426D5006EA2A2 /* UIImage+ScaleExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB712D1C3426D5006EA2A2 /* UIImage+ScaleExtras.m */; };
+		E2FB71331C39794E006EA2A2 /* JFFMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB71321C39794D006EA2A2 /* JFFMainTableViewController.m */; };
+		E2FB71361C397F84006EA2A2 /* JFFMainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FB71351C397F84006EA2A2 /* JFFMainTableViewCell.m */; };
 		EC0AB7121C1EA04000398867 /* NormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0AB7111C1EA04000398867 /* NormalTableViewCell.m */; };
 		EC8330B71C08204A00A2BA37 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8330B61C08204900A2BA37 /* main.m */; };
 		EC8330BA1C08204A00A2BA37 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8330B91C08204A00A2BA37 /* AppDelegate.m */; };
@@ -66,6 +68,10 @@
 		E2FB71291C34251F006EA2A2 /* camera-outline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-outline.png"; sourceTree = "<group>"; };
 		E2FB712C1C3426D5006EA2A2 /* UIImage+ScaleExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ScaleExtras.h"; sourceTree = "<group>"; };
 		E2FB712D1C3426D5006EA2A2 /* UIImage+ScaleExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ScaleExtras.m"; sourceTree = "<group>"; };
+		E2FB71311C39794D006EA2A2 /* JFFMainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFFMainTableViewController.h; sourceTree = "<group>"; };
+		E2FB71321C39794D006EA2A2 /* JFFMainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFFMainTableViewController.m; sourceTree = "<group>"; };
+		E2FB71341C397F84006EA2A2 /* JFFMainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFFMainTableViewCell.h; sourceTree = "<group>"; };
+		E2FB71351C397F84006EA2A2 /* JFFMainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFFMainTableViewCell.m; sourceTree = "<group>"; };
 		EC0AB7101C1EA04000398867 /* NormalTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalTableViewCell.h; sourceTree = "<group>"; };
 		EC0AB7111C1EA04000398867 /* NormalTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalTableViewCell.m; sourceTree = "<group>"; };
 		EC8330B21C08204900A2BA37 /* JustForFun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustForFun.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +165,17 @@
 			name = "tableview sample images";
 			sourceTree = "<group>";
 		};
+		E2FB71371C3980B0006EA2A2 /* Main Table View */ = {
+			isa = PBXGroup;
+			children = (
+				E2FB71311C39794D006EA2A2 /* JFFMainTableViewController.h */,
+				E2FB71321C39794D006EA2A2 /* JFFMainTableViewController.m */,
+				E2FB71341C397F84006EA2A2 /* JFFMainTableViewCell.h */,
+				E2FB71351C397F84006EA2A2 /* JFFMainTableViewCell.m */,
+			);
+			name = "Main Table View";
+			sourceTree = "<group>";
+		};
 		EC8330A91C08204900A2BA37 = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +211,7 @@
 				ECC2DBE11C14FA2400DEAF8E /* TableView */,
 				E2FB71231C34192E006EA2A2 /* JFFMainViewController.h */,
 				E2FB71241C34192E006EA2A2 /* JFFMainViewController.m */,
+				E2FB71371C3980B0006EA2A2 /* Main Table View */,
 				EC8330C11C08204A00A2BA37 /* Assets.xcassets */,
 				EC8330C61C08204A00A2BA37 /* Info.plist */,
 				EC8330B51C08204900A2BA37 /* Supporting Files */,
@@ -385,10 +403,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC8330F91C0A273C00A2BA37 /* JFFTableViewController.m in Sources */,
+				E2FB71331C39794E006EA2A2 /* JFFMainTableViewController.m in Sources */,
 				E2FB712E1C3426D5006EA2A2 /* UIImage+ScaleExtras.m in Sources */,
 				ECC2DBE41C14FA4400DEAF8E /* JFFCustomCell.m in Sources */,
 				EC0AB7121C1EA04000398867 /* NormalTableViewCell.m in Sources */,
 				EC8330BA1C08204A00A2BA37 /* AppDelegate.m in Sources */,
+				E2FB71361C397F84006EA2A2 /* JFFMainTableViewCell.m in Sources */,
 				EC8330FC1C0B9B1B00A2BA37 /* JFFScrollViewController.m in Sources */,
 				E2FB71251C34192E006EA2A2 /* JFFMainViewController.m in Sources */,
 				EC8330B71C08204A00A2BA37 /* main.m in Sources */,

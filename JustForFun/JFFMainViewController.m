@@ -8,10 +8,16 @@
 
 #import "JFFMainViewController.h"
 
+#import "JFFTableViewController.h"
+#import "JFFMainTableViewController.h"
+
 @interface JFFMainViewController ()
 @property (nonatomic,strong) UIButton *captureMoment;
 @property (nonatomic,strong) MKMapView *mapView;
 @property (nonatomic,strong) CLLocationManager *locationManager;
+@property (nonatomic,strong) UILabel *accuracy;
+@property (nonatomic, strong) JFFTableViewController *tvc;
+@property (nonatomic,strong) JFFMainTableViewController *mainTVC;
 @end
 
 @implementation JFFMainViewController
@@ -26,6 +32,9 @@
     [self configureLocationManager];
     [self configureCaptureButton];
     [self configureMapView];
+    //[self configureAccuracyLabel];
+    [self configureTVC];
+    //[self configureMainTVC];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appWillResignActive:) name:UIApplicationWillResignActiveNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appDidEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
@@ -95,7 +104,8 @@
     
     // after adding the buttons as subviews do some layout
     [self.captureMoment autoAlignAxis:ALAxisVertical toSameAxisOfView:self.view];
-    [self.captureMoment autoAlignAxis:ALAxisHorizontal toSameAxisOfView:self.view];
+    //[self.captureMoment autoAlignAxis:ALAxisHorizontal toSameAxisOfView:self.view];
+    [self.captureMoment autoPinToBottomLayoutGuideOfViewController:self withInset:self.view.frame.size.height*0.05];
     
     // size
     [self.captureMoment autoMatchDimension:ALDimensionWidth toDimension:ALDimensionWidth ofView:self.view withMultiplier:0.3];
@@ -122,11 +132,76 @@
     
     // constraints
     // size
-    [self.mapView autoMatchDimension:ALDimensionWidth toDimension:ALDimensionWidth ofView:self.view withMultiplier:0.7];
+    [self.mapView autoMatchDimension:ALDimensionWidth toDimension:ALDimensionWidth ofView:self.view withMultiplier:1.0];
     [self.mapView autoMatchDimension:ALDimensionHeight toDimension:ALDimensionWidth ofView:self.mapView withMultiplier:0.4];
     // after adding the buttons as subviews do some layout
     [self.mapView autoAlignAxis:ALAxisVertical toSameAxisOfView:self.view];
-    [self.mapView autoPinToTopLayoutGuideOfViewController:self withInset:10];
+    [self.mapView autoPinToTopLayoutGuideOfViewController:self withInset:0];
+}
+
+-(void)configureAccuracyLabel{
+    self.accuracy = [UILabel new];
+    [self.view addSubview:self.accuracy];
+    
+    // constraints
+    // size
+    [self.accuracy autoMatchDimension:ALDimensionWidth toDimension:ALDimensionWidth ofView:self.view withMultiplier:0.8];
+    
+    // do some layout
+    [self.accuracy autoAlignAxis:ALAxisVertical toSameAxisOfView:self.view];
+    [self.accuracy autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.mapView withOffset:15];
+    
+    //self.accuracy.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+    
+}
+
+-(void)setAccuracyValue:(float)accuracy{
+    self.accuracy.backgroundColor = [UIColor whiteColor];
+    
+    //NSString *fontName = @"HelveticaNeue-UltraLight";
+    NSString *fontName = @"HelveticaNeue-Thin";
+
+    NSDictionary *firstAttributes = @{NSForegroundColorAttributeName: [UIColor darkGrayColor], NSBackgroundColorAttributeName: [UIColor whiteColor], NSFontAttributeName: [UIFont fontWithName:fontName size:25.0] };
+    NSDictionary *secondAttributes = @{ NSForegroundColorAttributeName: [UIColor blackColor], NSBackgroundColorAttributeName: [UIColor whiteColor], NSFontAttributeName: [UIFont fontWithName:fontName size:40.0]  };
+    
+    
+    NSString *string = [NSString stringWithFormat:@"Accuracy: %.f m", accuracy];
+    
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:string];
+    
+    [attributedString addAttributes:firstAttributes range:[string rangeOfString:@"Accuracy:"]];
+    [attributedString addAttributes:secondAttributes range:[string rangeOfString:[NSString stringWithFormat:@" %.f m", accuracy]]];
+    
+    self.accuracy.attributedText = attributedString;
+}
+
+-(void)configureTVC{
+    self.tvc = [JFFTableViewController new];
+    [self.view addSubview:self.tvc.view];
+    
+    // constraints
+    // size
+    [self.tvc.view autoMatchDimension:ALDimensionWidth toDimension:ALDimensionWidth ofView:self.view withMultiplier:1];
+    //[self.tvc.view autoMatchDimension:ALDimensionHeight toDimension:ALDimensionHeight ofView:self.view withMultiplier:0.4];
+    
+    // do some layout
+    [self.tvc.view autoAlignAxis:ALAxisVertical toSameAxisOfView:self.view];
+    [self.tvc.view autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.mapView withOffset:0];
+    [self.tvc.view autoPinEdge:ALEdgeBottom toEdge:ALEdgeTop ofView:self.captureMoment withOffset:-10];
+}
+
+-(void)configureMainTVC{
+    self.mainTVC = [JFFMainTableViewController new];
+    [self.view addSubview:self.mainTVC.view];
+    
+    // constraints
+    // size
+    [self.mainTVC.view autoMatchDimension:ALDimensionWidth toDimension:ALDimensionWidth ofView:self.view withMultiplier:1];
+    
+    // do some layout
+    [self.mainTVC.view autoAlignAxis:ALAxisVertical toSameAxisOfView:self.view];
+    [self.mainTVC.view autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.mapView withOffset:0];
+    [self.mainTVC.view autoPinEdge:ALEdgeBottom toEdge:ALEdgeTop ofView:self.captureMoment withOffset:-10];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -158,11 +233,6 @@
 
 -(void)captureMoment:(id)sender{
     NSLog(@"%s", __PRETTY_FUNCTION__);
-    
-    
-
-    
- 
 }
 
 #pragma mark - CLLocationManagerDelegate
@@ -173,6 +243,9 @@
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(lastLocation.coordinate, 500, 500);
     MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:viewRegion];
     [self.mapView setRegion:adjustedRegion animated:YES];
+    
+    // set the accuracy label
+    //[self setAccuracyValue:lastLocation.horizontalAccuracy];
 }
 
 -(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
